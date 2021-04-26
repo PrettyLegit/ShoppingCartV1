@@ -226,6 +226,24 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>ProductsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductsModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -275,6 +293,16 @@
       <DependentUpon>CustomersModel.edmx</DependentUpon>
       <LastGenOutput>CustomersModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\ProductsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProductsModel.edmx</DependentUpon>
+      <LastGenOutput>ProductsModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ProductsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProductsModel.edmx</DependentUpon>
+      <LastGenOutput>ProductsModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -286,6 +314,13 @@
     </EntityDeploy>
     <Content Include="Models\CustomersModel.edmx.diagram">
       <DependentUpon>CustomersModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ProductsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProductsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ProductsModel.edmx.diagram">
+      <DependentUpon>ProductsModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -333,6 +368,9 @@
     <Content Include="Views\Shared\ShoppingCart1Layout.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Tab1Orders.cshtml" />
+    <Content Include="Views\Home\Tab2Orders.cshtml" />
+    <Content Include="Views\Home\Tab3Orders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

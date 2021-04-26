@@ -14,15 +14,15 @@ namespace ShoppingCartV1.Controllers
         string orderHeading = "Cake Orders";
 
         // Text for View Heading for each Tab
-        string[] tabHeadings = { "Home", "Single Layer Cake",
+        string[] tabHeadings = { "Home", "Single Layer Cake", "Double Layer Cake", "Tripe Layer Cake",
                                                  "About" };
 
         // View method name for each Tab
-        string[] tabViews = { "Index", "Tab1Orders",
+        string[] tabViews = { "Index", "Tab1Orders", "Tab2Orders", "Tab3Orders",
                                                  "About" };
 
         // View label displayed on each Tab
-        string[] tabLabels = { "Home", "1-Layer",
+        string[] tabLabels = { "Home", "1-Layer", "2-Layer", "3-Layer",
                                                  "About" };
 
         // Action Method for Home page View
@@ -31,7 +31,8 @@ namespace ShoppingCartV1.Controllers
             Session["PageHeading"] = siteHeading;
 
             ViewBag.Message = "Welcome To " + siteHeading;
-            ViewBag.Message2 = "Modify this text to jump-start your Shopping Cart application.";
+            ViewBag.Message2 = "<img src=\"/Images/logo.jpg\">";
+            ViewBag.Message2 += "<h3>This is the Cake Store of your Dreams!</h3>";
             return View();
         }
 
@@ -56,6 +57,32 @@ namespace ShoppingCartV1.Controllers
         public ActionResult Tab1Orders(string button, FormCollection collection)
         {
             return ProcessTabView(1, button, collection);
+        }
+
+        // Action Method for Second Product View
+        public ActionResult Tab2Orders()
+        {
+            return GetTabView(2);
+        }
+
+        // Action Method to Process Second Product View
+        [HttpPost]
+        public ActionResult Tab2Orders(string button, FormCollection collection)
+        {
+            return ProcessTabView(2, button, collection);
+        }
+
+        // Action Method for Third Product View
+        public ActionResult Tab3Orders()
+        {
+            return GetTabView(3);
+        }
+
+        // Action Method to Process Third Product View
+        [HttpPost]
+        public ActionResult Tab3Orders(string button, FormCollection collection)
+        {
+            return ProcessTabView(3, button, collection);
         }
     }
 }
